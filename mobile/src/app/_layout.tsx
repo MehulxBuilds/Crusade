@@ -17,7 +17,7 @@ export default function RootLayout() {
 
   return (
     <TamaguiProvider config={tamaguiConfig} defaultTheme="light">
-      <Stack />
+      <Stack screenOptions={{ headerShown: false }} />
     </TamaguiProvider>
   );
-}
+};

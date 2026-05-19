@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function MapScreen() {
+export default function SettingsScreenView() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Map</Text>
-      <Text style={styles.description}>Map view will be built here.</Text>
-    </View>
+      <Text style={styles.title}>Settings</Text>
+      <Text style={styles.description}>App Settings Comming Soon</Text>
+    </View> 
   );
 }
 

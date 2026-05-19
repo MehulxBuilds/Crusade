@@ -1,30 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native';
+import SettingsScreenView from '@/components/settings/settings-screen';
 
-export default function ProfileScreen() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Profile</Text>
-      <Text style={styles.description}>Profile settings and account details will live here.</Text>
-    </View>
-  );
+const SettingsScreen = () => {
+  return <SettingsScreenView />
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 24,
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: '700',
-    color: '#172554',
-  },
-  description: {
-    marginTop: 8,
-    textAlign: 'center',
-    color: '#64748b',
-    fontSize: 16,
-  },
-});
+export default SettingsScreen;

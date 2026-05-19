@@ -6,7 +6,7 @@ export const targetStatusEnum = ["NEW", "ABORTED", "COMPLETED"] as const;
 export type TargetStatusType = (typeof targetStatusEnum)[number];
 
 export const targets = sqliteTable("targets", {
-  id: integer("id").primaryKey(),
+  id: text("id").primaryKey().notNull(),
   name: text("name").notNull(),
   description: text("description"),
   targetDate: integer("target_date", { mode: "timestamp_ms" }).notNull(),
