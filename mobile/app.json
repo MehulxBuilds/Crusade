@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "mobile",
-    "slug": "mobile",
+    "name": "Crusade",
+    "slug": "crusade",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -17,7 +17,8 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.mehulxbuilds.mobile"
     },
     "web": {
       "output": "static",
@@ -36,7 +37,6 @@
         }
       ],
       "expo-font",
-      "expo-image",
       "expo-web-browser",
       "expo-sqlite",
       "@react-native-community/datetimepicker"
@@ -44,6 +44,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "51b145c2-32e0-4feb-8757-7c73f8fe713c"
+      }
     }
   }
 }

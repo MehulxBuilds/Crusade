@@ -37,9 +37,11 @@ export function useTargetDashboard() {
 
   const sortedTargets = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const todayTime = today.getTime();
 
     return [...targets]
-      .sort((a, b) => a.targetDate.getTime() - b.targetDate.getTime())
       .filter((target) => {
         if (!normalizedQuery) {
           return true;
@@ -49,6 +51,23 @@ export function useTargetDashboard() {
           .join(" ")
           .toLowerCase()
           .includes(normalizedQuery);
+      })
+      .sort((a, b) => {
+        const aDate = new Date(a.targetDate);
+        const bDate = new Date(b.targetDate);
+        aDate.setHours(0, 0, 0, 0);
+        bDate.setHours(0, 0, 0, 0);
+
+        const aTime = aDate.getTime();
+        const bTime = bDate.getTime();
+        const aIsPast = aTime < todayTime;
+        const bIsPast = bTime < todayTime;
+
+        if (aIsPast !== bIsPast) {
+          return aIsPast ? 1 : -1;
+        }
+
+        return aIsPast ? bTime - aTime : aTime - bTime;
       });
   }, [query, targets]);
 
@@ -166,4 +185,3 @@ export function useTargetDashboard() {
     sortedTargets,
   };
 }
-
